@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <Pizza className="w-8 h-8 text-pizza-red" />
               <span className="text-2xl font-bold text-white">
-                Pizzaria D'Limas
+                Pizzaria D&apos;Limas
               </span>
             </div>
             <p className="text-gray-400">
@@ -89,7 +89,7 @@ export default function Footer() {
           className="border-t border-gray-800 pt-8 text-center"
         >
           <p className="text-gray-500">
-            © {new Date().getFullYear()} Pizzaria D'Limas. Todos os direitos
+            © {new Date().getFullYear()} Pizzaria D&apos;Limas. Todos os direitos
             reservados.
           </p>
         </motion.div>

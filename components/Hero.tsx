@@ -29,7 +29,7 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-bold text-white mb-6"
           >
             Pizzaria{" "}
-            <span className="text-pizza-red">D'Limas</span>
+            <span className="text-pizza-red">D&apos;Limas</span>
           </motion.h1>
 
           <motion.p

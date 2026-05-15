@@ -32,7 +32,7 @@ export default function Sobre() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Sobre a <span className="text-pizza-red">Pizzaria D'Limas</span>
+            Sobre a <span className="text-pizza-red">Pizzaria D&apos;Limas</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Uma história de paixão pela pizza e compromisso com a qualidade
@@ -49,7 +49,7 @@ export default function Sobre() {
               Nossa História
             </h3>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              A Pizzaria D'Limas nasceu do sonho de oferecer pizzas autênticas
+              A Pizzaria D&apos;Limas nasceu do sonho de oferecer pizzas autênticas
               com o sabor da tradição. Desde o início, nossa missão foi
               proporcionar experiências gastronômicas únicas através de
               ingredientes de qualidade e receitas que preservam o verdadeiro

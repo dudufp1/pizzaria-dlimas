@@ -42,7 +42,7 @@ export default function Navbar() {
           >
             <Pizza className="w-8 h-8 text-pizza-red" />
             <span className="text-xl md:text-2xl font-bold text-white">
-              Pizzaria D'Limas
+              Pizzaria D&apos;Limas
             </span>
           </motion.div>
 

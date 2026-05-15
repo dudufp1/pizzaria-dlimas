@@ -5,11 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pizzaria D'Limas - Pizzas Gourmet em Ceilândia, Brasília",
+  title: "Pizzaria D&apos;Limas - Pizzas Gourmet em Ceilândia, Brasília",
   description: "A melhor pizzaria de Ceilândia, Brasília. Pizzas tradicionais, premium e doces com qualidade premium. Entrega e retirada. (61) 99527-9317",
   keywords: "pizzaria, pizzas, Ceilândia, Brasília, delivery, pizza gourmet, pizza tradicional",
   openGraph: {
-    title: "Pizzaria D'Limas - Pizzas Gourmet em Ceilândia, Brasília",
+    title: "Pizzaria D&apos;Limas - Pizzas Gourmet em Ceilândia, Brasília",
     description: "A melhor pizzaria de Ceilândia, Brasília. Pizzas tradicionais, premium e doces com qualidade premium.",
     type: "website",
   },
@@ -29,7 +29,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Pizzaria D'Limas",
+              name: "Pizzaria D&apos;Limas",
               image: "",
               telephone: "+5561995279317",
               address: {
