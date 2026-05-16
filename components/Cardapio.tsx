@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface Pizza {
   name: string;
@@ -100,10 +101,20 @@ const categories: Category[] = [
 
 export default function Cardapio() {
   const [activeCategory, setActiveCategory] = useState(0);
+  const { addToCart } = useCart();
 
   const handleWhatsAppOrder = (pizzaName: string) => {
     const message = encodeURIComponent(`Olá! Quero pedir a pizza ${pizzaName}`);
     window.open(`https://wa.me/5561995279317?text=${message}`, "_blank");
+  };
+
+  const handleAddToCart = (item: Pizza, categoryName: string) => {
+    addToCart({
+      name: item.name,
+      description: item.description,
+      price: item.price,
+      category: categoryName,
+    });
   };
 
   return (
@@ -161,15 +172,26 @@ export default function Cardapio() {
                 <span className="text-2xl font-bold text-pizza-gold">
                   R$ {item.price.toFixed(2)}
                 </span>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => handleWhatsAppOrder(item.name)}
-                  className="bg-pizza-red hover:bg-red-700 text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 transition-colors duration-200"
-                >
-                  <MessageCircle size={18} />
-                  Pedir
-                </motion.button>
+                <div className="flex gap-2">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleAddToCart(item, categories[activeCategory].name)}
+                    className="bg-pizza-charcoal hover:bg-pizza-dark border border-gray-700 hover:border-pizza-red/50 text-white px-3 py-2 rounded-full font-semibold flex items-center gap-2 transition-colors duration-200"
+                  >
+                    <ShoppingCart size={16} />
+                    <span className="hidden sm:inline">Adicionar</span>
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleWhatsAppOrder(item.name)}
+                    className="bg-pizza-red hover:bg-red-700 text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 transition-colors duration-200"
+                  >
+                    <MessageCircle size={18} />
+                    <span className="hidden sm:inline">Pedir</span>
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           ))}

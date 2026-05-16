@@ -2,11 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Pizza } from "lucide-react";
+import { Menu, X, Pizza, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenCart: () => void;
+}
+
+export default function Navbar({ onOpenCart }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { getTotalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,14 +64,50 @@ export default function Navbar() {
                 {item.name}
               </motion.a>
             ))}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={onOpenCart}
+              className="relative text-gray-300 hover:text-pizza-gold transition-colors duration-200"
+            >
+              <ShoppingCart size={24} />
+              {getTotalItems() > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-2 -right-2 bg-pizza-red text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold"
+                >
+                  {getTotalItems()}
+                </motion.span>
+              )}
+            </motion.button>
           </div>
 
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={onOpenCart}
+              className="relative text-gray-300 hover:text-pizza-gold transition-colors duration-200"
+            >
+              <ShoppingCart size={24} />
+              {getTotalItems() > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-2 -right-2 bg-pizza-red text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold"
+                >
+                  {getTotalItems()}
+                </motion.span>
+              )}
+            </motion.button>
+            <button
+              className="md:hidden text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
