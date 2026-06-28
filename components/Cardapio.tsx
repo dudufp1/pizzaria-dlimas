@@ -9,6 +9,7 @@ interface Pizza {
   name: string;
   description: string;
   price: number;
+  image?: string;
 }
 
 interface Category {
@@ -20,51 +21,51 @@ const categories: Category[] = [
   {
     name: "Tradicionais",
     items: [
-      { name: "Mussarela", description: "Queijo mussarela de qualidade premium", price: 30 },
-      { name: "Calabresa", description: "Calabresa defumada com cebola e azeitonas", price: 35 },
-      { name: "Portuguesa", description: "Molho, mussarela, calabresa, cebola, tomate, pimentão, ovo, azeitona e orégano", price: 40 },
-      { name: "Frango com Catupiry", description: "Frango desfiado com catupiry cremoso", price: 40 },
-      { name: "4 Queijos", description: "Mussarela, provolone, parmesão e catupiry", price: 42 },
-      { name: "Milho", description: "Molho, mussarela, milho, azeitona e orégano", price: 30 },
-      { name: "Queijo e Presunto", description: "Molho, mussarela, presunto e orégano", price: 30 },
-      { name: "Marguerita", description: "Molho, mussarela, tomate, manjericão fresco e orégano", price: 30 },
-      { name: "Napolitana", description: "Molho, mussarela, presunto, tomate, cebola, azeitona e orégano", price: 35 },
-      { name: "Bacon", description: "Molho, mussarela, bacon, milho e orégano", price: 35 },
-      { name: "Calabresa com Cheddar", description: "Molho, mussarela, calabresa, azeitona, cebola, cheddar e orégano", price: 40 },
-      { name: "Calabresa com Catupiry", description: "Molho, mussarela, calabresa, cebola, catupiry e orégano", price: 40 },
-      { name: "Vegetariana", description: "Molho, mussarela, catipiry, palmito, cebola, tomate, pimentão, azeitona e orégano", price: 40 },
-      { name: "Frango com Cheddar", description: "Molho, mussarela, frango, azeitona, cheddar e orégano", price: 40 },
-      { name: "Calabacon", description: "Molho, mussarela, calabresa, bacon, cebola, azeitona e orégano", price: 42 },
-      { name: "Franbacon", description: "Molho, mussarela, frango, bacon e orégano", price: 42 },
-      { name: "Frango com Palmito", description: "Molho, mussarela, palmito, frango, tomate, cebola, azeitona e orégano", price: 45 },
-      { name: "Moda da Casa", description: "Molho, mussarela, frango, milho, calabresa, bacon, azeitona e orégano", price: 45 },
-      { name: "Carne de Sol", description: "Molho, mussarela, carne de sol, cebola, catupiry e orégano", price: 45 },
-      { name: "5 Queijos", description: "Molho, mussarela, catupiry, cheddar, parmesão, provolone e orégano", price: 45 },
+      { name: "Mussarela", description: "Queijo mussarela de qualidade premium", price: 30, image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop" },
+      { name: "Calabresa", description: "Calabresa defumada com cebola e azeitonas", price: 35, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" },
+      { name: "Portuguesa", description: "Molho, mussarela, calabresa, cebola, tomate, pimentão, ovo, azeitona e orégano", price: 40, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" },
+      { name: "Frango com Catupiry", description: "Frango desfiado com catupiry cremoso", price: 40, image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&h=300&fit=crop" },
+      { name: "4 Queijos", description: "Mussarela, provolone, parmesão e catupiry", price: 42, image: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" },
+      { name: "Milho", description: "Molho, mussarela, milho, azeitona e orégano", price: 30, image: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=300&fit=crop" },
+      { name: "Queijo e Presunto", description: "Molho, mussarela, presunto e orégano", price: 30, image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&h=300&fit=crop" },
+      { name: "Marguerita", description: "Molho, mussarela, tomate, manjericão fresco e orégano", price: 30, image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop" },
+      { name: "Napolitana", description: "Molho, mussarela, presunto, tomate, cebola, azeitona e orégano", price: 35, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" },
+      { name: "Bacon", description: "Molho, mussarela, bacon, milho e orégano", price: 35, image: "https://images.unsplash.com/photo-1600028068383-ea11a7a101f3?w=400&h=300&fit=crop" },
+      { name: "Calabresa com Cheddar", description: "Molho, mussarela, calabresa, azeitona, cebola, cheddar e orégano", price: 40, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" },
+      { name: "Calabresa com Catupiry", description: "Molho, mussarela, calabresa, cebola, catupiry e orégano", price: 40, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" },
+      { name: "Vegetariana", description: "Molho, mussarela, catipiry, palmito, cebola, tomate, pimentão, azeitona e orégano", price: 40, image: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=300&fit=crop" },
+      { name: "Frango com Cheddar", description: "Molho, mussarela, frango, azeitona, cheddar e orégano", price: 40, image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&h=300&fit=crop" },
+      { name: "Calabacon", description: "Molho, mussarela, calabresa, bacon, cebola, azeitona e orégano", price: 42, image: "https://images.unsplash.com/photo-1600028068383-ea11a7a101f3?w=400&h=300&fit=crop" },
+      { name: "Franbacon", description: "Molho, mussarela, frango, bacon e orégano", price: 42, image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&h=300&fit=crop" },
+      { name: "Frango com Palmito", description: "Molho, mussarela, palmito, frango, tomate, cebola, azeitona e orégano", price: 45, image: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=300&fit=crop" },
+      { name: "Moda da Casa", description: "Molho, mussarela, frango, milho, calabresa, bacon, azeitona e orégano", price: 45, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" },
+      { name: "Carne de Sol", description: "Molho, mussarela, carne de sol, cebola, catupiry e orégano", price: 45, image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&h=300&fit=crop" },
+      { name: "5 Queijos", description: "Molho, mussarela, catupiry, cheddar, parmesão, provolone e orégano", price: 45, image: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" },
     ],
   },
   {
     name: "Premium",
     items: [
-      { name: "Camarão com Polenguinho", description: "Camarões frescos com polenguinho cremoso", price: 60 },
-      { name: "Caviar do Sertão", description: "Carne de sol com queijo coalho e cream cheese", price: 60 },
-      { name: "Mineirinha Apimentada", description: "Molho, mussarela, linguiça fina suína com pimenta, queijo coalho, cebola e azeitona", price: 60 },
-      { name: "Mineirinha sem Pimenta", description: "Molho, mussarela, linguiça fina suína, queijo coalho, cebola e azeitona", price: 60 },
-      { name: "Lombo Suíno Assado com Truffles", description: "Molho especial, mussarela, lombo assado, cebola e batata truffles", price: 60 },
-      { name: "Ouro Branco", description: "Creme de leite, mussarela, chocolate, ouro branco e cereja", price: 60 },
-      { name: "Pamonha com Coco", description: "Creme de leite, mussarela, creme de milho, pamonha, coco ralado e leite condensado", price: 60 },
+      { name: "Camarão com Polenguinho", description: "Camarões frescos com polenguinho cremoso", price: 60, image: "https://images.unsplash.com/photo-1595295333158-4742f28fbd85?w=400&h=300&fit=crop" },
+      { name: "Caviar do Sertão", description: "Carne de sol com queijo coalho e cream cheese", price: 60, image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&h=300&fit=crop" },
+      { name: "Mineirinha Apimentada", description: "Molho, mussarela, linguiça fina suína com pimenta, queijo coalho, cebola e azeitona", price: 60, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" },
+      { name: "Mineirinha sem Pimenta", description: "Molho, mussarela, linguiça fina suína, queijo coalho, cebola e azeitona", price: 60, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" },
+      { name: "Lombo Suíno Assado com Truffles", description: "Molho especial, mussarela, lombo assado, cebola e batata truffles", price: 60, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" },
+      { name: "Ouro Branco", description: "Creme de leite, mussarela, chocolate, ouro branco e cereja", price: 60, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Pamonha com Coco", description: "Creme de leite, mussarela, creme de milho, pamonha, coco ralado e leite condensado", price: 60, image: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=300&fit=crop" },
     ],
   },
   {
     name: "Doces",
     items: [
-      { name: "Prestígio", description: "Chocolate com coco ralado", price: 35 },
-      { name: "Morango com Nutella", description: "Morangos frescos com Nutella", price: 40 },
-      { name: "Banana com Açúcar e Canela", description: "Creme de leite, mussarela, banana, açúcar e canela", price: 30 },
-      { name: "Banana com Chocolate", description: "Creme de leite, mussarela, banana e chocolate", price: 35 },
-      { name: "Chocolate", description: "Creme de leite, mussarela e chocolate", price: 30 },
-      { name: "Beijinho", description: "Creme de leite, mussarela, leite condensado e coco", price: 35 },
-      { name: "Banana com Nutella", description: "Creme de leite, mussarela, banana e nutella", price: 35 },
-      { name: "Morango com Chocolate", description: "Creme de leite, mussarela, morango e chocolate", price: 40 },
+      { name: "Prestígio", description: "Chocolate com coco ralado", price: 35, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Morango com Nutella", description: "Morangos frescos com Nutella", price: 40, image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop" },
+      { name: "Banana com Açúcar e Canela", description: "Creme de leite, mussarela, banana, açúcar e canela", price: 30, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Banana com Chocolate", description: "Creme de leite, mussarela, banana e chocolate", price: 35, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Chocolate", description: "Creme de leite, mussarela e chocolate", price: 30, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Beijinho", description: "Creme de leite, mussarela, leite condensado e coco", price: 35, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Banana com Nutella", description: "Creme de leite, mussarela, banana e nutella", price: 35, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" },
+      { name: "Morango com Chocolate", description: "Creme de leite, mussarela, morango e chocolate", price: 40, image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop" },
     ],
   },
   {
@@ -166,6 +167,15 @@ export default function Cardapio() {
               whileHover={{ scale: 1.03, y: -5 }}
               className="bg-pizza-charcoal rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-800 hover:border-pizza-red/50"
             >
+              {item.image && (
+                <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+              )}
               <h3 className="text-xl font-bold text-white mb-2">{item.name}</h3>
               <p className="text-gray-400 mb-4">{item.description}</p>
               <div className="flex items-center justify-between">
